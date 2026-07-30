@@ -50,3 +50,4 @@ set_global_assignment -name BDF_FILE "decodificador2-4.bdf"
 set_global_assignment -name BDF_FILE "decodificador3-8.bdf"
 set_global_assignment -name BDF_FILE bitRegistro.bdf
 set_global_assignment -name BDF_FILE Registro4Bits.bdf
+set_global_assignment -name BDF_FILE BloqueLogica.bdf
