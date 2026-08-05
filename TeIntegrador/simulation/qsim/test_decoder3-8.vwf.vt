@@ -1,0 +1,426 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "08/04/2026 13:56:04"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    decodificador3-8
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module decodificador3-8_vlg_sample_tst(
+	A0,
+	A1,
+	A2,
+	sampler_tx
+);
+input  A0;
+input  A1;
+input  A2;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(A0 or A1 or A2)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module decodificador3-8_vlg_check_tst (
+	000,
+	001,
+	010,
+	011,
+	100,
+	101,
+	110,
+	111,
+	sampler_rx
+);
+input  000;
+input  001;
+input  010;
+input  011;
+input  100;
+input  101;
+input  110;
+input  111;
+input sampler_rx;
+
+reg  000_expected;
+reg  001_expected;
+reg  010_expected;
+reg  011_expected;
+reg  100_expected;
+reg  101_expected;
+reg  110_expected;
+reg  111_expected;
+
+reg  000_prev;
+reg  001_prev;
+reg  010_prev;
+reg  011_prev;
+reg  100_prev;
+reg  101_prev;
+reg  110_prev;
+reg  111_prev;
+
+reg  000_expected_prev;
+reg  001_expected_prev;
+reg  010_expected_prev;
+reg  011_expected_prev;
+reg  100_expected_prev;
+reg  101_expected_prev;
+reg  110_expected_prev;
+reg  111_expected_prev;
+
+reg  last_000_exp;
+reg  last_001_exp;
+reg  last_010_exp;
+reg  last_011_exp;
+reg  last_100_exp;
+reg  last_101_exp;
+reg  last_110_exp;
+reg  last_111_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:8] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 8'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	000_prev = 000;
+	001_prev = 001;
+	010_prev = 010;
+	011_prev = 011;
+	100_prev = 100;
+	101_prev = 101;
+	110_prev = 110;
+	111_prev = 111;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	000_expected_prev = 000_expected;
+	001_expected_prev = 001_expected;
+	010_expected_prev = 010_expected;
+	011_expected_prev = 011_expected;
+	100_expected_prev = 100_expected;
+	101_expected_prev = 101_expected;
+	110_expected_prev = 110_expected;
+	111_expected_prev = 111_expected;
+end
+
+
+
+// expected 000
+initial
+begin
+	000_expected = 1'bX;
+end 
+
+// expected 001
+initial
+begin
+	001_expected = 1'bX;
+end 
+
+// expected 010
+initial
+begin
+	010_expected = 1'bX;
+end 
+
+// expected 011
+initial
+begin
+	011_expected = 1'bX;
+end 
+
+// expected 100
+initial
+begin
+	100_expected = 1'bX;
+end 
+
+// expected 101
+initial
+begin
+	101_expected = 1'bX;
+end 
+
+// expected 110
+initial
+begin
+	110_expected = 1'bX;
+end 
+
+// expected 111
+initial
+begin
+	111_expected = 1'bX;
+end 
+// generate trigger
+always @(000_expected or 000 or 001_expected or 001 or 010_expected or 010 or 011_expected or 011 or 100_expected or 100 or 101_expected or 101 or 110_expected or 110 or 111_expected or 111)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected 000 = %b | expected 001 = %b | expected 010 = %b | expected 011 = %b | expected 100 = %b | expected 101 = %b | expected 110 = %b | expected 111 = %b | ",000_expected_prev,001_expected_prev,010_expected_prev,011_expected_prev,100_expected_prev,101_expected_prev,110_expected_prev,111_expected_prev);
+	$display("| real 000 = %b | real 001 = %b | real 010 = %b | real 011 = %b | real 100 = %b | real 101 = %b | real 110 = %b | real 111 = %b | ",000_prev,001_prev,010_prev,011_prev,100_prev,101_prev,110_prev,111_prev);
+`endif
+	if (
+		( 000_expected_prev !== 1'bx ) && ( 000_prev !== 000_expected_prev )
+		&& ((000_expected_prev !== last_000_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port 000 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", 000_expected_prev);
+		$display ("     Real value = %b", 000_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_000_exp = 000_expected_prev;
+	end
+	if (
+		( 001_expected_prev !== 1'bx ) && ( 001_prev !== 001_expected_prev )
+		&& ((001_expected_prev !== last_001_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port 001 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", 001_expected_prev);
+		$display ("     Real value = %b", 001_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_001_exp = 001_expected_prev;
+	end
+	if (
+		( 010_expected_prev !== 1'bx ) && ( 010_prev !== 010_expected_prev )
+		&& ((010_expected_prev !== last_010_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port 010 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", 010_expected_prev);
+		$display ("     Real value = %b", 010_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_010_exp = 010_expected_prev;
+	end
+	if (
+		( 011_expected_prev !== 1'bx ) && ( 011_prev !== 011_expected_prev )
+		&& ((011_expected_prev !== last_011_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port 011 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", 011_expected_prev);
+		$display ("     Real value = %b", 011_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_011_exp = 011_expected_prev;
+	end
+	if (
+		( 100_expected_prev !== 1'bx ) && ( 100_prev !== 100_expected_prev )
+		&& ((100_expected_prev !== last_100_exp) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port 100 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", 100_expected_prev);
+		$display ("     Real value = %b", 100_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_100_exp = 100_expected_prev;
+	end
+	if (
+		( 101_expected_prev !== 1'bx ) && ( 101_prev !== 101_expected_prev )
+		&& ((101_expected_prev !== last_101_exp) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port 101 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", 101_expected_prev);
+		$display ("     Real value = %b", 101_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_101_exp = 101_expected_prev;
+	end
+	if (
+		( 110_expected_prev !== 1'bx ) && ( 110_prev !== 110_expected_prev )
+		&& ((110_expected_prev !== last_110_exp) ||
+			on_first_change[7])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port 110 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", 110_expected_prev);
+		$display ("     Real value = %b", 110_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[7] = 1'b0;
+		last_110_exp = 110_expected_prev;
+	end
+	if (
+		( 111_expected_prev !== 1'bx ) && ( 111_prev !== 111_expected_prev )
+		&& ((111_expected_prev !== last_111_exp) ||
+			on_first_change[8])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port 111 :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", 111_expected_prev);
+		$display ("     Real value = %b", 111_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[8] = 1'b0;
+		last_111_exp = 111_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module decodificador3-8_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg A0;
+reg A1;
+reg A2;
+// wires                                               
+wire 000;
+wire 001;
+wire 010;
+wire 011;
+wire 100;
+wire 101;
+wire 110;
+wire 111;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+decodificador3-8 i1 (
+// port map - connection between master ports and signals/registers   
+	.\000 (000),
+	.\001 (001),
+	.\010 (010),
+	.\011 (011),
+	.\100 (100),
+	.\101 (101),
+	.\110 (110),
+	.\111 (111),
+	.A0(A0),
+	.A1(A1),
+	.A2(A2)
+);
+
+// A0
+initial
+begin
+	repeat(12)
+	begin
+		A0 = 1'b0;
+		A0 = #40000 1'b1;
+		# 40000;
+	end
+	A0 = 1'b0;
+end 
+
+// A1
+always
+begin
+	A1 = 1'b0;
+	A1 = #20000 1'b1;
+	#20000;
+end 
+
+// A2
+always
+begin
+	A2 = 1'b0;
+	A2 = #10000 1'b1;
+	#10000;
+end 
+
+decodificador3-8_vlg_sample_tst tb_sample (
+	.A0(A0),
+	.A1(A1),
+	.A2(A2),
+	.sampler_tx(sampler)
+);
+
+decodificador3-8_vlg_check_tst tb_out(
+	.000(000),
+	.001(001),
+	.010(010),
+	.011(011),
+	.100(100),
+	.101(101),
+	.110(110),
+	.111(111),
+	.sampler_rx(sampler)
+);
+endmodule
+
