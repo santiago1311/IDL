@@ -1,5 +1,5 @@
 EDA Netlist Writer report for integrador
-Wed Aug  5 18:00:58 2026
+Wed Aug  5 19:38:44 2026
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Aug  5 18:00:58 2026 ;
+; EDA Netlist Writer Status ; Successful - Wed Aug  5 19:38:44 2026 ;
 ; Revision Name             ; integrador                            ;
 ; Top-level Entity Name     ; integrador                            ;
 ; Family                    ; Cyclone IV GX                         ;
@@ -65,13 +65,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Simulation Generated Files                                                       ;
-+----------------------------------------------------------------------------------+
-; Generated Files                                                                  ;
-+----------------------------------------------------------------------------------+
-; /home/fzsantiago03/Desktop/IDL-TP-Integrador-main/simulation/qsim//integrador.vo ;
-+----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Simulation Generated Files                                                     ;
++--------------------------------------------------------------------------------+
+; Generated Files                                                                ;
++--------------------------------------------------------------------------------+
+; /home/fzsantiago03/altera/Trabajos/TeIntegrador/simulation/qsim//integrador.vo ;
++--------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -93,14 +93,14 @@ Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: programming logic devices manufactured by Altera and sold by 
     Info: Altera or its authorized distributors.  Please refer to the 
     Info: applicable agreement for further details.
-    Info: Processing started: Wed Aug  5 18:00:57 2026
-Info: Command: quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=/home/fzsantiago03/Desktop/IDL-TP-Integrador-main/simulation/qsim/ integrador -c integrador
+    Info: Processing started: Wed Aug  5 19:38:44 2026
+Info: Command: quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=/home/fzsantiago03/altera/Trabajos/TeIntegrador/simulation/qsim/ integrador -c integrador
 Info (119004): Automatically selected device EP4CGX15BF14C6 for design integrador
-Info (204019): Generated file integrador.vo in folder "/home/fzsantiago03/Desktop/IDL-TP-Integrador-main/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file integrador.vo in folder "/home/fzsantiago03/altera/Trabajos/TeIntegrador/simulation/qsim//" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 898 megabytes
-    Info: Processing ended: Wed Aug  5 18:00:58 2026
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Wed Aug  5 19:38:44 2026
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
 
 

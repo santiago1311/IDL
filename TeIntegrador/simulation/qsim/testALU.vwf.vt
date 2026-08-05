@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "08/05/2026 18:00:55"
+// Generated on "08/05/2026 19:38:42"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    integrador
 // 
@@ -27,25 +27,25 @@
 
 `timescale 1 ps/ 1 ps
 module integrador_vlg_sample_tst(
-	A,
 	B,
 	clk,
 	ExtLOADA,
+	InA,
 	LOADB,
 	OPCODE,
 	sampler_tx
 );
-input [3:0] A;
 input [3:0] B;
 input  clk;
 input  ExtLOADA;
+input [3:0] InA;
 input  LOADB;
 input [2:0] OPCODE;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(A or B or clk or ExtLOADA or LOADB or OPCODE)
+always @(B or clk or ExtLOADA or InA or LOADB or OPCODE)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -67,27 +67,27 @@ endmodule
 module integrador_vlg_check_tst (
 	FLAGS,
 	LOAD_A,
-	S,
+	OuA,
 	sampler_rx
 );
 input [3:0] FLAGS;
 input  LOAD_A;
-input [3:0] S;
+input [3:0] OuA;
 input sampler_rx;
 
 reg [3:0] FLAGS_expected;
 reg  LOAD_A_expected;
-reg [3:0] S_expected;
+reg [3:0] OuA_expected;
 
 reg [3:0] FLAGS_prev;
 reg  LOAD_A_prev;
-reg [3:0] S_prev;
+reg [3:0] OuA_prev;
 
 reg [3:0] FLAGS_expected_prev;
-reg [3:0] S_expected_prev;
+reg [3:0] OuA_expected_prev;
 
 reg [3:0] last_FLAGS_exp;
-reg [3:0] last_S_exp;
+reg [3:0] last_OuA_exp;
 
 reg trigger;
 
@@ -111,7 +111,7 @@ always @(trigger)
 begin
 	FLAGS_prev = FLAGS;
 	LOAD_A_prev = LOAD_A;
-	S_prev = S;
+	OuA_prev = OuA;
 end
 
 // update expected /o prevs
@@ -119,29 +119,29 @@ end
 always @(trigger)
 begin
 	FLAGS_expected_prev = FLAGS_expected;
-	S_expected_prev = S_expected;
+	OuA_expected_prev = OuA_expected;
 end
 
 
-// expected S[ 3 ]
+// expected OuA[ 3 ]
 initial
 begin
-	S_expected[3] = 1'bX;
+	OuA_expected[3] = 1'bX;
 end 
-// expected S[ 2 ]
+// expected OuA[ 2 ]
 initial
 begin
-	S_expected[2] = 1'bX;
+	OuA_expected[2] = 1'bX;
 end 
-// expected S[ 1 ]
+// expected OuA[ 1 ]
 initial
 begin
-	S_expected[1] = 1'bX;
+	OuA_expected[1] = 1'bX;
 end 
-// expected S[ 0 ]
+// expected OuA[ 0 ]
 initial
 begin
-	S_expected[0] = 1'bX;
+	OuA_expected[0] = 1'bX;
 end 
 // expected FLAGS[ 3 ]
 initial
@@ -164,7 +164,7 @@ begin
 	FLAGS_expected[0] = 1'bX;
 end 
 // generate trigger
-always @(FLAGS_expected or FLAGS or LOAD_A_expected or LOAD_A or S_expected or S)
+always @(FLAGS_expected or FLAGS or LOAD_A_expected or LOAD_A or OuA_expected or OuA)
 begin
 	trigger <= ~trigger;
 end
@@ -174,8 +174,8 @@ begin
 `ifdef debug_tbench
 	$display("Scanning pattern %d @time = %t",i,$realtime );
 	i = i + 1;
-	$display("| expected FLAGS = %b | expected LOAD_A = %b | expected S = %b | ",FLAGS_expected_prev,LOAD_A_expected_prev,S_expected_prev);
-	$display("| real FLAGS = %b | real LOAD_A = %b | real S = %b | ",FLAGS_prev,LOAD_A_prev,S_prev);
+	$display("| expected FLAGS = %b | expected LOAD_A = %b | expected OuA = %b | ",FLAGS_expected_prev,LOAD_A_expected_prev,OuA_expected_prev);
+	$display("| real FLAGS = %b | real LOAD_A = %b | real OuA = %b | ",FLAGS_prev,LOAD_A_prev,OuA_prev);
 `endif
 	if (
 		( FLAGS_expected_prev[0] !== 1'bx ) && ( FLAGS_prev[0] !== FLAGS_expected_prev[0] )
@@ -230,56 +230,56 @@ begin
 		last_FLAGS_exp[3] = FLAGS_expected_prev[3];
 	end
 	if (
-		( S_expected_prev[0] !== 1'bx ) && ( S_prev[0] !== S_expected_prev[0] )
-		&& ((S_expected_prev[0] !== last_S_exp[0]) ||
+		( OuA_expected_prev[0] !== 1'bx ) && ( OuA_prev[0] !== OuA_expected_prev[0] )
+		&& ((OuA_expected_prev[0] !== last_OuA_exp[0]) ||
 			on_first_change[3])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port S[0] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S_expected_prev);
-		$display ("     Real value = %b", S_prev);
+		$display ("ERROR! Vector Mismatch for output port OuA[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OuA_expected_prev);
+		$display ("     Real value = %b", OuA_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[3] = 1'b0;
-		last_S_exp[0] = S_expected_prev[0];
+		last_OuA_exp[0] = OuA_expected_prev[0];
 	end
 	if (
-		( S_expected_prev[1] !== 1'bx ) && ( S_prev[1] !== S_expected_prev[1] )
-		&& ((S_expected_prev[1] !== last_S_exp[1]) ||
+		( OuA_expected_prev[1] !== 1'bx ) && ( OuA_prev[1] !== OuA_expected_prev[1] )
+		&& ((OuA_expected_prev[1] !== last_OuA_exp[1]) ||
 			on_first_change[3])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port S[1] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S_expected_prev);
-		$display ("     Real value = %b", S_prev);
+		$display ("ERROR! Vector Mismatch for output port OuA[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OuA_expected_prev);
+		$display ("     Real value = %b", OuA_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[3] = 1'b0;
-		last_S_exp[1] = S_expected_prev[1];
+		last_OuA_exp[1] = OuA_expected_prev[1];
 	end
 	if (
-		( S_expected_prev[2] !== 1'bx ) && ( S_prev[2] !== S_expected_prev[2] )
-		&& ((S_expected_prev[2] !== last_S_exp[2]) ||
+		( OuA_expected_prev[2] !== 1'bx ) && ( OuA_prev[2] !== OuA_expected_prev[2] )
+		&& ((OuA_expected_prev[2] !== last_OuA_exp[2]) ||
 			on_first_change[3])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port S[2] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S_expected_prev);
-		$display ("     Real value = %b", S_prev);
+		$display ("ERROR! Vector Mismatch for output port OuA[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OuA_expected_prev);
+		$display ("     Real value = %b", OuA_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[3] = 1'b0;
-		last_S_exp[2] = S_expected_prev[2];
+		last_OuA_exp[2] = OuA_expected_prev[2];
 	end
 	if (
-		( S_expected_prev[3] !== 1'bx ) && ( S_prev[3] !== S_expected_prev[3] )
-		&& ((S_expected_prev[3] !== last_S_exp[3]) ||
+		( OuA_expected_prev[3] !== 1'bx ) && ( OuA_prev[3] !== OuA_expected_prev[3] )
+		&& ((OuA_expected_prev[3] !== last_OuA_exp[3]) ||
 			on_first_change[3])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port S[3] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S_expected_prev);
-		$display ("     Real value = %b", S_prev);
+		$display ("ERROR! Vector Mismatch for output port OuA[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OuA_expected_prev);
+		$display ("     Real value = %b", OuA_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[3] = 1'b0;
-		last_S_exp[3] = S_expected_prev[3];
+		last_OuA_exp[3] = OuA_expected_prev[3];
 	end
 
 	trigger <= ~trigger;
@@ -300,31 +300,31 @@ endmodule
 module integrador_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg [3:0] A;
 reg [3:0] B;
 reg clk;
 reg ExtLOADA;
+reg [3:0] InA;
 reg LOADB;
 reg [2:0] OPCODE;
 // wires                                               
 wire [3:0] FLAGS;
 wire LOAD_A;
-wire [3:0] S;
+wire [3:0] OuA;
 
 wire sampler;                             
 
 // assign statements (if any)                          
 integrador i1 (
 // port map - connection between master ports and signals/registers   
-	.A(A),
 	.B(B),
 	.clk(clk),
 	.ExtLOADA(ExtLOADA),
 	.FLAGS(FLAGS),
+	.InA(InA),
 	.LOAD_A(LOAD_A),
 	.LOADB(LOADB),
 	.OPCODE(OPCODE),
-	.S(S)
+	.OuA(OuA)
 );
 
 // clk
@@ -340,18 +340,6 @@ initial
 begin
 	ExtLOADA = 1'b1;
 	ExtLOADA = #20000 1'b0;
-	ExtLOADA = #60000 1'b1;
-	ExtLOADA = #20000 1'b0;
-	ExtLOADA = #20000 1'b1;
-	ExtLOADA = #20000 1'b0;
-	ExtLOADA = #20000 1'b1;
-	ExtLOADA = #20000 1'b0;
-	ExtLOADA = #20000 1'b1;
-	ExtLOADA = #20000 1'b0;
-	ExtLOADA = #20000 1'b1;
-	ExtLOADA = #20000 1'b0;
-	ExtLOADA = #20000 1'b1;
-	ExtLOADA = #20000 1'b0;
 end 
 
 // LOADB
@@ -361,51 +349,57 @@ begin
 	LOADB = #20000 1'b1;
 	LOADB = #20000 1'b0;
 end 
-// A[ 3 ]
+// InA[ 3 ]
 initial
 begin
-	A[3] = 1'b0;
+	InA[3] = 1'b0;
+	InA[3] = #200000 1'b1;
+	InA[3] = #100000 1'b0;
 end 
-// A[ 2 ]
+// InA[ 2 ]
 initial
 begin
-	A[2] = 1'b1;
-	A[2] = #330000 1'b0;
+	InA[2] = 1'b1;
+	InA[2] = #300000 1'b0;
 end 
-// A[ 1 ]
+// InA[ 1 ]
 initial
 begin
-	A[1] = 1'b0;
+	InA[1] = 1'b1;
+	InA[1] = #100000 1'b0;
+	InA[1] = #100000 1'b1;
+	InA[1] = #100000 1'b0;
 end 
-// A[ 0 ]
+// InA[ 0 ]
 initial
 begin
-	A[0] = 1'b1;
-	A[0] = #330000 1'b0;
+	InA[0] = 1'b1;
 end 
 // B[ 3 ]
 initial
 begin
 	B[3] = 1'b0;
+	B[3] = #200000 1'b1;
 end 
 // B[ 2 ]
 initial
 begin
 	B[2] = 1'b0;
+	B[2] = #200000 1'b1;
+	B[2] = #100000 1'b0;
 end 
 // B[ 1 ]
 initial
 begin
-	B[1] = 1'b0;
-	B[1] = #20000 1'b1;
-	B[1] = #20000 1'b0;
+	B[1] = 1'b1;
+	B[1] = #100000 1'b0;
+	B[1] = #200000 1'b1;
 end 
 // B[ 0 ]
 initial
 begin
 	B[0] = 1'b0;
-	B[0] = #20000 1'b1;
-	B[0] = #20000 1'b0;
+	B[0] = #100000 1'b1;
 end 
 // OPCODE[ 2 ]
 initial
@@ -448,10 +442,10 @@ begin
 end 
 
 integrador_vlg_sample_tst tb_sample (
-	.A(A),
 	.B(B),
 	.clk(clk),
 	.ExtLOADA(ExtLOADA),
+	.InA(InA),
 	.LOADB(LOADB),
 	.OPCODE(OPCODE),
 	.sampler_tx(sampler)
@@ -460,7 +454,7 @@ integrador_vlg_sample_tst tb_sample (
 integrador_vlg_check_tst tb_out(
 	.FLAGS(FLAGS),
 	.LOAD_A(LOAD_A),
-	.S(S),
+	.OuA(OuA),
 	.sampler_rx(sampler)
 );
 endmodule

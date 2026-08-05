@@ -51,7 +51,7 @@ set_global_assignment -name BDF_FILE Registro4Bits.bdf
 set_global_assignment -name QIP_FILE lpm_mux0.qip
 set_global_assignment -name VECTOR_WAVEFORM_FILE "test registro4bits.vwf"
 set_global_assignment -name VECTOR_WAVEFORM_FILE test_registro4bits.vwf
-set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "/home/fzsantiago03/Desktop/IDL-TP-Integrador-main/simulation/qsim/" -section_id eda_simulation
+set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR /home/fzsantiago03/altera/Trabajos/TeIntegrador/simulation/qsim/ -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
 set_global_assignment -name BDF_FILE And4bits.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE test_AND4bit.vwf
@@ -67,4 +67,5 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE test_ALU.vwf
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name VECTOR_WAVEFORM_FILE ../../Waveform.vwf
 set_global_assignment -name BDF_FILE RegistroFlags.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testALU.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

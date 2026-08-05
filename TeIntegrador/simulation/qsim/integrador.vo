@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
-// DATE "08/05/2026 18:00:58"
+// DATE "08/05/2026 19:38:44"
 
 // 
 // Device: Altera EP4CGX15BF14C6 Package FBGA169
@@ -36,8 +36,8 @@ module integrador (
 	clk,
 	LOADB,
 	B,
-	A,
-	S);
+	InA,
+	OuA);
 output 	LOAD_A;
 input 	ExtLOADA;
 input 	[2:0] OPCODE;
@@ -45,8 +45,8 @@ output 	[3:0] FLAGS;
 input 	clk;
 input 	LOADB;
 input 	[3:0] B;
-input 	[3:0] A;
-output 	[3:0] S;
+input 	[3:0] InA;
+output 	[3:0] OuA;
 
 wire gnd;
 wire vcc;
@@ -64,10 +64,10 @@ wire \FLAGS[3]~output_o ;
 wire \FLAGS[2]~output_o ;
 wire \FLAGS[1]~output_o ;
 wire \FLAGS[0]~output_o ;
-wire \S[3]~output_o ;
-wire \S[2]~output_o ;
-wire \S[1]~output_o ;
-wire \S[0]~output_o ;
+wire \OuA[3]~output_o ;
+wire \OuA[2]~output_o ;
+wire \OuA[1]~output_o ;
+wire \OuA[0]~output_o ;
 wire \ExtLOADA~input_o ;
 wire \OPCODE[2]~input_o ;
 wire \OPCODE[1]~input_o ;
@@ -82,7 +82,7 @@ wire \B[2]~input_o ;
 wire \REGB|inst1|inst~q ;
 wire \B[1]~input_o ;
 wire \REGB|inst2|inst~q ;
-wire \A[0]~input_o ;
+wire \InA[0]~input_o ;
 wire \inst4~0_combout ;
 wire \B[0]~input_o ;
 wire \REGB|inst3|inst~q ;
@@ -91,15 +91,15 @@ wire \gdfx_temp0[3]~1_combout ;
 wire \inst|inst|inst|inst8~combout ;
 wire \gdfx_temp0[0]~15_combout ;
 wire \gdfx_temp0[2]~8_combout ;
-wire \A[1]~input_o ;
+wire \InA[1]~input_o ;
 wire \adder|inst2|inst|1~combout ;
 wire \gdfx_temp0[1]~10_combout ;
 wire \gdfx_temp0[1]~11_combout ;
-wire \A[2]~input_o ;
+wire \InA[2]~input_o ;
 wire \adder|inst3|inst|1~combout ;
 wire \gdfx_temp0[2]~5_combout ;
 wire \gdfx_temp0[2]~6_combout ;
-wire \A[3]~input_o ;
+wire \InA[3]~input_o ;
 wire \gdfx_temp0[3]~0_combout ;
 wire \gdfx_temp0[3]~2_combout ;
 wire \gdfx_temp0[3]~3_combout ;
@@ -192,52 +192,52 @@ defparam \FLAGS[0]~output .bus_hold = "false";
 defparam \FLAGS[0]~output .open_drain_output = "false";
 // synopsys translate_on
 
-cycloneiv_io_obuf \S[3]~output (
+cycloneiv_io_obuf \OuA[3]~output (
 	.i(\REGA|inst4|inst~q ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\S[3]~output_o ),
+	.o(\OuA[3]~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \S[3]~output .bus_hold = "false";
-defparam \S[3]~output .open_drain_output = "false";
+defparam \OuA[3]~output .bus_hold = "false";
+defparam \OuA[3]~output .open_drain_output = "false";
 // synopsys translate_on
 
-cycloneiv_io_obuf \S[2]~output (
+cycloneiv_io_obuf \OuA[2]~output (
 	.i(\REGA|inst1|inst~q ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\S[2]~output_o ),
+	.o(\OuA[2]~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \S[2]~output .bus_hold = "false";
-defparam \S[2]~output .open_drain_output = "false";
+defparam \OuA[2]~output .bus_hold = "false";
+defparam \OuA[2]~output .open_drain_output = "false";
 // synopsys translate_on
 
-cycloneiv_io_obuf \S[1]~output (
+cycloneiv_io_obuf \OuA[1]~output (
 	.i(\REGA|inst2|inst~q ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\S[1]~output_o ),
+	.o(\OuA[1]~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \S[1]~output .bus_hold = "false";
-defparam \S[1]~output .open_drain_output = "false";
+defparam \OuA[1]~output .bus_hold = "false";
+defparam \OuA[1]~output .open_drain_output = "false";
 // synopsys translate_on
 
-cycloneiv_io_obuf \S[0]~output (
+cycloneiv_io_obuf \OuA[0]~output (
 	.i(\REGA|inst3|inst~q ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\S[0]~output_o ),
+	.o(\OuA[0]~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \S[0]~output .bus_hold = "false";
-defparam \S[0]~output .open_drain_output = "false";
+defparam \OuA[0]~output .bus_hold = "false";
+defparam \OuA[0]~output .open_drain_output = "false";
 // synopsys translate_on
 
 cycloneiv_io_ibuf \ExtLOADA~input (
@@ -407,13 +407,13 @@ defparam \REGB|inst2|inst .is_wysiwyg = "true";
 defparam \REGB|inst2|inst .power_up = "low";
 // synopsys translate_on
 
-cycloneiv_io_ibuf \A[0]~input (
-	.i(A[0]),
+cycloneiv_io_ibuf \InA[0]~input (
+	.i(InA[0]),
 	.ibar(gnd),
-	.o(\A[0]~input_o ));
+	.o(\InA[0]~input_o ));
 // synopsys translate_off
-defparam \A[0]~input .bus_hold = "false";
-defparam \A[0]~input .simulate_z_as = "z";
+defparam \InA[0]~input .bus_hold = "false";
+defparam \InA[0]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 cycloneiv_lcell_comb \inst4~0 (
@@ -539,13 +539,13 @@ defparam \gdfx_temp0[2]~8 .lut_mask = 16'h8888;
 defparam \gdfx_temp0[2]~8 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-cycloneiv_io_ibuf \A[1]~input (
-	.i(A[1]),
+cycloneiv_io_ibuf \InA[1]~input (
+	.i(InA[1]),
 	.ibar(gnd),
-	.o(\A[1]~input_o ));
+	.o(\InA[1]~input_o ));
 // synopsys translate_off
-defparam \A[1]~input .bus_hold = "false";
-defparam \A[1]~input .simulate_z_as = "z";
+defparam \InA[1]~input .bus_hold = "false";
+defparam \InA[1]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 cycloneiv_lcell_comb \adder|inst2|inst|1 (
@@ -596,13 +596,13 @@ defparam \gdfx_temp0[1]~11 .lut_mask = 16'hA8A8;
 defparam \gdfx_temp0[1]~11 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-cycloneiv_io_ibuf \A[2]~input (
-	.i(A[2]),
+cycloneiv_io_ibuf \InA[2]~input (
+	.i(InA[2]),
 	.ibar(gnd),
-	.o(\A[2]~input_o ));
+	.o(\InA[2]~input_o ));
 // synopsys translate_off
-defparam \A[2]~input .bus_hold = "false";
-defparam \A[2]~input .simulate_z_as = "z";
+defparam \InA[2]~input .bus_hold = "false";
+defparam \InA[2]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 cycloneiv_lcell_comb \adder|inst3|inst|1 (
@@ -653,13 +653,13 @@ defparam \gdfx_temp0[2]~6 .lut_mask = 16'hA8A8;
 defparam \gdfx_temp0[2]~6 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-cycloneiv_io_ibuf \A[3]~input (
-	.i(A[3]),
+cycloneiv_io_ibuf \InA[3]~input (
+	.i(InA[3]),
 	.ibar(gnd),
-	.o(\A[3]~input_o ));
+	.o(\InA[3]~input_o ));
 // synopsys translate_off
-defparam \A[3]~input .bus_hold = "false";
-defparam \A[3]~input .simulate_z_as = "z";
+defparam \InA[3]~input .bus_hold = "false";
+defparam \InA[3]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 cycloneiv_lcell_comb \gdfx_temp0[3]~0 (
@@ -744,9 +744,9 @@ defparam \gdfx_temp0[3]~4 .sum_lutc_input = "datac";
 
 cycloneiv_lcell_comb \REGA|inst4|inst4~0 (
 // Equation(s):
-// \REGA|inst4|inst4~0_combout  = (\ExtLOADA~input_o  & (\A[3]~input_o )) # (!\ExtLOADA~input_o  & ((\gdfx_temp0[3]~4_combout )))
+// \REGA|inst4|inst4~0_combout  = (\ExtLOADA~input_o  & (\InA[3]~input_o )) # (!\ExtLOADA~input_o  & ((\gdfx_temp0[3]~4_combout )))
 
-	.dataa(\A[3]~input_o ),
+	.dataa(\InA[3]~input_o ),
 	.datab(\gdfx_temp0[3]~4_combout ),
 	.datac(gnd),
 	.datad(\ExtLOADA~input_o ),
@@ -810,9 +810,9 @@ defparam \gdfx_temp0[2]~9 .sum_lutc_input = "datac";
 
 cycloneiv_lcell_comb \REGA|inst1|inst4~0 (
 // Equation(s):
-// \REGA|inst1|inst4~0_combout  = (\ExtLOADA~input_o  & (\A[2]~input_o )) # (!\ExtLOADA~input_o  & ((\gdfx_temp0[2]~9_combout )))
+// \REGA|inst1|inst4~0_combout  = (\ExtLOADA~input_o  & (\InA[2]~input_o )) # (!\ExtLOADA~input_o  & ((\gdfx_temp0[2]~9_combout )))
 
-	.dataa(\A[2]~input_o ),
+	.dataa(\InA[2]~input_o ),
 	.datab(\gdfx_temp0[2]~9_combout ),
 	.datac(gnd),
 	.datad(\ExtLOADA~input_o ),
@@ -876,9 +876,9 @@ defparam \gdfx_temp0[1]~13 .sum_lutc_input = "datac";
 
 cycloneiv_lcell_comb \REGA|inst2|inst4~0 (
 // Equation(s):
-// \REGA|inst2|inst4~0_combout  = (\ExtLOADA~input_o  & (\A[1]~input_o )) # (!\ExtLOADA~input_o  & ((\gdfx_temp0[1]~13_combout )))
+// \REGA|inst2|inst4~0_combout  = (\ExtLOADA~input_o  & (\InA[1]~input_o )) # (!\ExtLOADA~input_o  & ((\gdfx_temp0[1]~13_combout )))
 
-	.dataa(\A[1]~input_o ),
+	.dataa(\InA[1]~input_o ),
 	.datab(\gdfx_temp0[1]~13_combout ),
 	.datac(gnd),
 	.datad(\ExtLOADA~input_o ),
@@ -942,9 +942,9 @@ defparam \gdfx_temp0[0]~17 .sum_lutc_input = "datac";
 
 cycloneiv_lcell_comb \REGA|inst3|inst4~0 (
 // Equation(s):
-// \REGA|inst3|inst4~0_combout  = (\ExtLOADA~input_o  & (\A[0]~input_o )) # (!\ExtLOADA~input_o  & ((\gdfx_temp0[0]~17_combout )))
+// \REGA|inst3|inst4~0_combout  = (\ExtLOADA~input_o  & (\InA[0]~input_o )) # (!\ExtLOADA~input_o  & ((\gdfx_temp0[0]~17_combout )))
 
-	.dataa(\A[0]~input_o ),
+	.dataa(\InA[0]~input_o ),
 	.datab(\gdfx_temp0[0]~17_combout ),
 	.datac(gnd),
 	.datad(\ExtLOADA~input_o ),
@@ -1168,12 +1168,12 @@ assign FLAGS[1] = \FLAGS[1]~output_o ;
 
 assign FLAGS[0] = \FLAGS[0]~output_o ;
 
-assign S[3] = \S[3]~output_o ;
+assign OuA[3] = \OuA[3]~output_o ;
 
-assign S[2] = \S[2]~output_o ;
+assign OuA[2] = \OuA[2]~output_o ;
 
-assign S[1] = \S[1]~output_o ;
+assign OuA[1] = \OuA[1]~output_o ;
 
-assign S[0] = \S[0]~output_o ;
+assign OuA[0] = \OuA[0]~output_o ;
 
 endmodule

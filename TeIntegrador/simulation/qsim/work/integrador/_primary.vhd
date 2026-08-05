@@ -9,7 +9,7 @@ entity integrador is
         clk             : in     vl_logic;
         LOADB           : in     vl_logic;
         B               : in     vl_logic_vector(3 downto 0);
-        A               : in     vl_logic_vector(3 downto 0);
-        S               : out    vl_logic_vector(3 downto 0)
+        InA             : in     vl_logic_vector(3 downto 0);
+        OuA             : out    vl_logic_vector(3 downto 0)
     );
 end integrador;

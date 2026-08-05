@@ -180,11 +180,11 @@ R10
 !s85 0
 !s101 -O0
 vintegrador
-Z59 !s100 =mYo]DUhbRcKfmzAEoC2a1
-Z60 Ib@NT4TkEnIz;UTg9`a94i3
-Z61 Vmka<GamIZ0UOM^1Sm2^hO3
-Z62 d/home/fzsantiago03/Desktop/IDL-TP-Integrador-main/simulation/qsim
-Z63 w1785963658
+Z59 !s100 bK8bD@[A^J36gOe2E:nm10
+Z60 IUYK27[W2KbhJP5CPI<[T_1
+Z61 V_oYefz99=b;NeFKhBR5_E1
+Z62 d/home/fzsantiago03/altera/Trabajos/TeIntegrador/simulation/qsim
+Z63 w1785969524
 R6
 R7
 L0 31
@@ -195,71 +195,71 @@ R9
 R10
 !i10b 1
 !s85 0
-Z64 !s108 1785963658.439394
+Z64 !s108 1785969524.725726
 R13
 !s101 -O0
 vintegrador_vlg_check_tst
 !i10b 1
-!s100 Ia8_Z6Ua638kYgV0^@>Sb3
-Iga[n:j?KI[B<2l7VEgTP83
-Z65 VgP^ei07alR69XCKo>D2Zj1
+Z65 !s100 `c1>i8_>zNzdRVjL1f1Ff0
+Z66 INhdXAk2XeR]I[_ooQ2<O51
+Z67 VOAPDDeDHG;=20bzB]hR[>0
 R62
-Z66 w1785963655
-Z67 8testALU.vwf.vt
-Z68 FtestALU.vwf.vt
+Z68 w1785969522
+Z69 8testALU.vwf.vt
+Z70 FtestALU.vwf.vt
 L0 67
 R8
 r1
 !s85 0
 31
-Z69 !s108 1785963658.462927
-Z70 !s107 testALU.vwf.vt|
-Z71 !s90 -work|work|testALU.vwf.vt|
+Z71 !s108 1785969524.742408
+Z72 !s107 testALU.vwf.vt|
+Z73 !s90 -work|work|testALU.vwf.vt|
 !s101 -O0
 R10
 vintegrador_vlg_sample_tst
 !i10b 1
-!s100 Z;nGXdAbn>[YR_eSA;6kc1
-IdAR?Ea0Gk3E3QWJHS1enP3
-Z72 Vlhg=I35LJ2oZYOj1JM6DP2
+Z74 !s100 QUCa[6eoZNRB2gd3T;^z[2
+Z75 IP8?=QW`:fQlVMKF]R1aBn2
+Z76 VZnb7R9XzU8gDV2fJCj8@23
 R62
-R66
-R67
 R68
+R69
+R70
 L0 29
 R8
 r1
 !s85 0
 31
-R69
-R70
 R71
+R72
+R73
 !s101 -O0
 R10
 vintegrador_vlg_vec_tst
 !i10b 1
-!s100 kfFGdRE0bOg<MOTCdKhz43
-IiP:MPB_XC@?S:9kl;fMLD1
-Z73 VM0N@Xn>fTjKaJ1S:lY6Bh3
+Z77 !s100 J9U?>i[YoSQOalng4Y_MQ0
+Z78 IAAS=@TL1Q418^be:e01YU3
+Z79 VM0N@Xn>fTjKaJ1S:lY6Bh3
 R62
-R66
-R67
 R68
-Z74 L0 300
+R69
+R70
+Z80 L0 300
 R8
 r1
 !s85 0
 31
-R69
-R70
 R71
+R72
+R73
 !s101 -O0
 R10
 vRegistro4Bits
-Z75 I1JKmIjh7e`aQ;WiUQYa321
-Z76 VCh1ZePdFHk9V3LUV?8:AC0
+Z81 I1JKmIjh7e`aQ;WiUQYa321
+Z82 VCh1ZePdFHk9V3LUV?8:AC0
 R4
-Z77 w1785862163
+Z83 w1785862163
 R6
 R7
 L0 31
@@ -267,71 +267,71 @@ R8
 r1
 31
 R10
-Z78 n@registro4@bits
-Z79 !s100 I5BKUZmikFo8E>M[I7i2W1
-Z80 !s108 1785862165.786000
+Z84 n@registro4@bits
+Z85 !s100 I5BKUZmikFo8E>M[I7i2W1
+Z86 !s108 1785862165.786000
 R13
 R9
 !i10b 1
 !s85 0
 !s101 -O0
 vRegistro4Bits_vlg_check_tst
-Z81 Ig_`B9`3Fe8B_LAnOXUmfZ0
-Z82 VjS47[E:J>hozQEj=h5nL20
+Z87 Ig_`B9`3Fe8B_LAnOXUmfZ0
+Z88 VjS47[E:J>hozQEj=h5nL20
 R4
-Z83 w1785862162
-Z84 8test_registro4bits.vwf.vt
-Z85 Ftest_registro4bits.vwf.vt
+Z89 w1785862162
+Z90 8test_registro4bits.vwf.vt
+Z91 Ftest_registro4bits.vwf.vt
 L0 61
 R8
 r1
 31
-Z86 !s108 1785862165.893000
-Z87 !s107 test_registro4bits.vwf.vt|
-Z88 !s90 -work|work|test_registro4bits.vwf.vt|
+Z92 !s108 1785862165.893000
+Z93 !s107 test_registro4bits.vwf.vt|
+Z94 !s90 -work|work|test_registro4bits.vwf.vt|
 R10
-Z89 n@registro4@bits_vlg_check_tst
-Z90 !s100 VGm5Ra60H8mkIcGh_]zF^0
+Z95 n@registro4@bits_vlg_check_tst
+Z96 !s100 VGm5Ra60H8mkIcGh_]zF^0
 !i10b 1
 !s85 0
 !s101 -O0
 vRegistro4Bits_vlg_sample_tst
-Z91 INcIBJa^jfK;8<BDZ;AP:F1
-Z92 Vi3EGeJSG@4@PWR;nm628>0
+Z97 INcIBJa^jfK;8<BDZ;AP:F1
+Z98 Vi3EGeJSG@4@PWR;nm628>0
 R4
-R83
-R84
-R85
+R89
+R90
+R91
 L0 29
 R8
 r1
 31
-R86
-R87
-R88
+R92
+R93
+R94
 R10
-Z93 n@registro4@bits_vlg_sample_tst
-Z94 !s100 Yfb^ZE]P`9`lz^4H_@K[Z1
+Z99 n@registro4@bits_vlg_sample_tst
+Z100 !s100 Yfb^ZE]P`9`lz^4H_@K[Z1
 !i10b 1
 !s85 0
 !s101 -O0
 vRegistro4Bits_vlg_vec_tst
-Z95 IVTJh72?HM7fET@Ogld0>L3
-Z96 V4=Ua>QzJC2N7KHUF:MZ?O3
+Z101 IVTJh72?HM7fET@Ogld0>L3
+Z102 V4=Ua>QzJC2N7KHUF:MZ?O3
 R4
-R83
-R84
-R85
+R89
+R90
+R91
 R35
 R8
 r1
 31
-R86
-R87
-R88
+R92
+R93
+R94
 R10
-Z97 n@registro4@bits_vlg_vec_tst
-Z98 !s100 f72[[`PnR6F4nIn>KS4Bb1
+Z103 n@registro4@bits_vlg_vec_tst
+Z104 !s100 f72[[`PnR6F4nIn>KS4Bb1
 !i10b 1
 !s85 0
 !s101 -O0
